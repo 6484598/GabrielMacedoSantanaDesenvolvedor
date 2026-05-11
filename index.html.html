@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Gabriel Macedo de Santana — Desenvolvedor Web</title>
+  <meta name="description" content="Currículo de Gabriel Macedo de Santana — Desenvolvedor Web iniciante com projetos reais em produção.">
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1e40af;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --success: #16a34a;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    /* HEADER */
+    .header {
+      background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+      color: #fff;
+      padding: 50px 40px;
+      border-radius: 16px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 40px rgba(37,99,235,0.2);
+    }
+
+    .header h1 {
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .header .titulo {
+      font-size: 18px;
+      opacity: 0.95;
+      margin-bottom: 24px;
+    }
+
+    .contatos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .contato {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+    }
+
+    .contato a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .contato a:hover { text-decoration: underline; }
+
+    /* SEÇÕES */
+    .secao {
+      background: var(--surface);
+      padding: 32px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .secao h2 {
+      font-size: 22px;
+      color: var(--primary-dark);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .secao .destaque {
+      font-size: 15px;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    /* PROJETOS */
+    .projeto {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .projeto:last-child { border-bottom: none; }
+
+    .projeto-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .projeto h3 {
+      font-size: 17px;
+      color: var(--text);
+    }
+
+    .projeto-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .projeto-link:hover { text-decoration: underline; }
+
+    .projeto-stack {
+      font-size: 13px;
+      color: var(--success);
+      font-weight: 600;
+      margin: 4px 0;
+    }
+
+    .projeto-desc {
+      font-size: 14px;
+      color: var(--text-light);
+      margin-top: 6px;
+    }
+
+    .projeto-desc ul {
+      margin-top: 6px;
+      padding-left: 18px;
+    }
+
+    .projeto-desc li {
+      margin: 3px 0;
+    }
+
+    /* HABILIDADES */
+    .habilidades-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .habilidade-card {
+      background: var(--bg);
+      padding: 16px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+
+    .habilidade-card h4 {
+      font-size: 14px;
+      color: var(--primary);
+      margin-bottom: 8px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .habilidade-card ul {
+      list-style: none;
+      font-size: 14px;
+    }
+
+    .habilidade-card li {
+      padding: 2px 0;
+      color: var(--text);
+    }
+
+    /* EXPERIÊNCIA / EDUCAÇÃO */
+    .item {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .item:last-child { border-bottom: none; }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .item h3 {
+      font-size: 17px;
+      color: var(--text);
+    }
+
+    .item-periodo {
+      font-size: 13px;
+      color: var(--text-light);
+      font-weight: 600;
+    }
+
+    .item-empresa {
+      font-size: 14px;
+      color: var(--primary);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .item-desc {
+      font-size: 14px;
+      color: var(--text-light);
+    }
+
+    /* RODAPÉ COM CTA */
+    .cta {
+      background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+      border: 2px solid var(--success);
+      padding: 24px;
+      border-radius: 16px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .cta h3 {
+      color: var(--success);
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .cta p {
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .cta a {
+      color: var(--primary);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 600px) {
+      .container { padding: 20px 12px; }
+      .header { padding: 32px 20px; }
+      .header h1 { font-size: 26px; }
+      .secao { padding: 20px; }
+      .projeto-header,
+      .item-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* IMPRESSÃO (pra salvar como PDF) */
+    @media print {
+      body { background: #fff; }
+      .header { box-shadow: none; }
+      .secao { box-shadow: none; page-break-inside: avoid; }
+      .cta { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Gabriel Macedo de Santana</h1>
+    <p class="titulo">Desenvolvedor Web Iniciante · Empreendedor Digital</p>
+
+    <div class="contatos">
+      <div class="contato">📧 <a href="mailto:cultor.motovlog@gmail.com">cultor.motovlog@gmail.com</a></div>
+      <div class="contato">📱 (11) 94775-5850</div>
+      <div class="contato">📍 Arujá - SP</div>
+      <div class="contato">💼 <a href="https://github.com/6484598" target="_blank">github.com/6484598</a></div>
+      <div class="contato">🌐 <a href="https://criadordecontratos.vercel.app" target="_blank">criadordecontratos.vercel.app</a></div>
+      <div class="contato">📅 28 anos · Disponível para remoto</div>
+    </div>
+  </div>
+
+  <!-- RESUMO -->
+  <div class="secao">
+    <h2>👋 Sobre Mim</h2>
+    <p class="destaque">
+      Desenvolvedor web iniciante, autodidata, com base em Análise e Desenvolvimento de Sistemas (Anhembi Morumbi).
+      Construo projetos reais do zero ao deploy — atualmente mantenho 2 aplicações web em produção,
+      atendendo usuários reais. Combinando autonomia técnica e visão de negócio, busco oportunidade júnior
+      em desenvolvimento web para crescer profissionalmente em um time.
+    </p>
+  </div>
+
+  <!-- PROJETOS (DESTAQUE) -->
+  <div class="secao">
+    <h2>💻 Projetos em Produção</h2>
+
+    <div class="projeto">
+      <div class="projeto-header">
+        <h3>Contratos Fácil — Plataforma de Geração de Contratos</h3>
+        <a href="https://criadordecontratos.vercel.app" target="_blank" class="projeto-link">🔗 criadordecontratos.vercel.app</a>
+      </div>
+      <div class="projeto-stack">HTML5 · CSS3 · JavaScript · Vercel · Git/GitHub</div>
+      <div class="projeto-desc">
+        Plataforma web que gera contratos jurídicos (Locação, Compra e Venda, Prestação de Serviços, Doação)
+        em PDF e Word, com formulários multi-step e validações.
+        <ul>
+          <li>4 tipos de contrato com fluxo de preenchimento guiado</li>
+          <li>Geração de arquivos DOCX e PDF no navegador (sem servidor)</li>
+          <li>Upload e edição de contratos existentes (PDF e Word)</li>
+          <li>Validação de CPF/CNPJ com algoritmo de dígitos verificadores</li>
+          <li>Adequação à LGPD com política de privacidade e termos de uso</li>
+          <li>Integração com Google AdSense para monetização</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="projeto">
+      <div class="projeto-header">
+        <h3>Loteamento Novo Império — Site de Vendas de Terrenos</h3>
+        <span class="projeto-link">📄 Site institucional</span>
+      </div>
+      <div class="projeto-stack">HTML5 · CSS3 · JavaScript · Design Responsivo</div>
+      <div class="projeto-desc">
+        Site institucional para venda de lotes em Piracaia-SP, com catálogo de imóveis, simulador de
+        parcelamento, sistema de favoritos e integração com WhatsApp para captação de leads.
+        <ul>
+          <li>Catálogo dinâmico de lotes com filtros e busca</li>
+          <li>Simulador de financiamento com regras de negócio</li>
+          <li>Sistema de favoritos usando LocalStorage</li>
+          <li>Galeria com lightbox e modo escuro</li>
+          <li>Layout 100% responsivo (mobile-first)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- HABILIDADES -->
+  <div class="secao">
+    <h2>🛠️ Habilidades Técnicas</h2>
+    <div class="habilidades-grid">
+      <div class="habilidade-card">
+        <h4>Frontend</h4>
+        <ul>
+          <li>✓ HTML5 (semântico)</li>
+          <li>✓ CSS3 (Flexbox/Grid)</li>
+          <li>✓ JavaScript (Vanilla)</li>
+          <li>✓ Design Responsivo</li>
+          <li>✓ DOM Manipulation</li>
+        </ul>
+      </div>
+      <div class="habilidade-card">
+        <h4>Ferramentas</h4>
+        <ul>
+          <li>✓ Git / GitHub</li>
+          <li>✓ Vercel (Deploy)</li>
+          <li>✓ VS Code</li>
+          <li>✓ Chrome DevTools</li>
+        </ul>
+      </div>
+      <div class="habilidade-card">
+        <h4>Outros</h4>
+        <ul>
+          <li>✓ Python (básico)</li>
+          <li>✓ LocalStorage/SessionStorage</li>
+          <li>✓ Bibliotecas: jsPDF, docx.js</li>
+          <li>✓ APIs Web (FileReader, Fetch)</li>
+        </ul>
+      </div>
+      <div class="habilidade-card">
+        <h4>Estudando</h4>
+        <ul>
+          <li>🎯 React.js</li>
+          <li>🎯 TypeScript</li>
+          <li>🎯 Node.js</li>
+          <li>🎯 Inglês técnico</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORMAÇÃO -->
+  <div class="secao">
+    <h2>🎓 Formação</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <h3>Análise e Desenvolvimento de Sistemas</h3>
+        <span class="item-periodo">2024 (1 semestre cursado)</span>
+      </div>
+      <div class="item-empresa">Universidade Anhembi Morumbi</div>
+      <div class="item-desc">
+        Conteúdos cursados: Lógica de programação, Algoritmos, Fundamentos de Sistemas Web.
+        Curso trancado, com planos de retomada.
+      </div>
+    </div>
+  </div>
+
+  <!-- CURSOS LIVRES -->
+  <div class="secao">
+    <h2>📚 Cursos e Autodidatismo</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <h3>JavaScript</h3>
+        <span class="item-periodo">2024</span>
+      </div>
+      <div class="item-desc">Curso de fundamentos da linguagem, manipulação de DOM e eventos.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <h3>HTML5 e CSS3</h3>
+        <span class="item-periodo">2024</span>
+      </div>
+      <div class="item-desc">Estrutura, semântica e estilização. Flexbox, Grid Layout, design responsivo.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <h3>Python (Básico)</h3>
+        <span class="item-periodo">2024</span>
+      </div>
+      <div class="item-desc">Sintaxe, estruturas de controle, manipulação de arquivos.</div>
+    </div>
+  </div>
+
+  <!-- EXPERIÊNCIA -->
+  <div class="secao">
+    <h2>💼 Experiência Profissional</h2>
+
+    <div class="item">
+      <div class="item-header">
+        <h3>Auxiliar de Mecânico</h3>
+        <span class="item-periodo">2025</span>
+      </div>
+      <div class="item-empresa">Lau Rent Guindastes</div>
+      <div class="item-desc">
+        Suporte ao mecânico em manutenção de motores a diesel. Desenvolvimento de habilidades como
+        atenção a detalhes, trabalho em equipe e resolução de problemas práticos.
+      </div>
+    </div>
+  </div>
+
+  <!-- INFORMAÇÕES ADICIONAIS -->
+  <div class="secao">
+    <h2>ℹ️ Informações Adicionais</h2>
+    <ul style="list-style: none; font-size: 14px; color: var(--text);">
+      <li style="padding: 6px 0;"><strong>🌍 Idiomas:</strong> Português (nativo) · Inglês (básico, em estudo)</li>
+      <li style="padding: 6px 0;"><strong>💼 Disponibilidade:</strong> Tempo integral ou meio período</li>
+      <li style="padding: 6px 0;"><strong>🏠 Modelo de trabalho:</strong> Remoto preferencial</li>
+      <li style="padding: 6px 0;"><strong>🚀 Objetivo:</strong> Ingressar em time de desenvolvimento como Júnior, contribuindo com projetos reais e aprendendo continuamente</li>
+    </ul>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <h3>🤝 Vamos conversar?</h3>
+    <p>
+      Acesse meus projetos em <a href="https://criadordecontratos.vercel.app" target="_blank">criadordecontratos.vercel.app</a>
+      ou veja o código em <a href="https://github.com/6484598" target="_blank">github.com/6484598</a>
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>
